@@ -19,7 +19,13 @@ class Category:
             return True
         else:
             return False
-            
+
+    def wd_count(self):
+        count = 0
+        for entry in self.ledger:
+            if entry["amount"] < 0:
+                count += entry["amount"]
+        return count        
 
     def get_balance(self):
         return self.balance
@@ -106,23 +112,3 @@ def create_spend_chart(categories):
         y = y + 1
     title = title.rstrip("\n")
     return title
-
-
-# Run some tests
-food = budget.Category("Food")
-food.deposit(1000, "initial deposit")
-food.withdraw(10.15, "groceries")
-food.withdraw(15.89, "restaurant and more food for dessert")
-print(food.get_balance())
-clothing = budget.Category("Clothing")
-food.transfer(50, clothing)
-clothing.withdraw(25.55)
-clothing.withdraw(100)
-auto = budget.Category("Auto")
-auto.deposit(1000, "initial deposit")
-auto.withdraw(15)
-
-print(food)
-print(clothing)
-
-print(create_spend_chart([food, clothing, auto]))
