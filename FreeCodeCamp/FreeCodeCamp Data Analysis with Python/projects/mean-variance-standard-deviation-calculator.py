@@ -27,13 +27,3 @@ def calculate(list):
 
 # test the function
 print(calculate([0,1,2,3,4,5,6,7,8]))
-
-
-test_list = [0,1,2,3,4,5,6,7,8]
-test_array = np.array(test_list).reshape(3,3)
-print(np.mean(test_array,axis=0))
-print(np.var(test_array,axis=0))
-print(np.std(test_array,axis=0))
-print(np.max(test_array,axis=0))
-print(np.min(test_array,axis=0))
-print(np.sum(test_array,axis=0))
