@@ -15,7 +15,7 @@ df.drop(df[outliers].index,inplace=True)
 
 def draw_line_plot():
     # Draw line plot
-    df.plot(kind='line',xlabel='Date',ylabel='Page Views', title='Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
+    fig = df.plot(kind='line',xlabel='Date',ylabel='Page Views', title='Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
 
     # Save image and return fig (don't change this part)
     fig.savefig('line_plot.png')
